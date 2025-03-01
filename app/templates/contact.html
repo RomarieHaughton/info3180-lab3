@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Contact Form</h1>
+<hr>
+<p>Fill in this form to contact the site owners.</p>
+
+<form method="POST" class="mt-4">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        <label class="form-label">{{ form.name.label }} (Required)</label>
+        <small class="d-block text-muted">Please enter your full name.</small>
+        {{ form.name(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">{{ form.email.label }} (Required)</label>
+        <small class="d-block text-muted">Please enter your email address.</small>
+        {{ form.email(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">{{ form.subject.label }} (Required)</label>
+        <small class="d-block text-muted">Please enter the subject for your message.</small>
+        {{ form.subject(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">{{ form.message.label }} (Required)</label>
+        <small class="d-block text-muted">Please enter the message you would like to send.</small>
+        {{ form.message(class="form-control", rows=4) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+{% endblock %}
+
